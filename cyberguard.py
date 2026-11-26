@@ -2,9 +2,8 @@
 
 print("========================================")
 print("      CYBERGUARD SECURITY SYSTEM")
-print("========================================")
 
-# 1. Request required inputs (Strings, Integers, and Boolean)
+
 username = input("Enter username: ")
 email = input("Enter email address: ")
 password = input("Enter password: ")
@@ -13,13 +12,12 @@ ip_address = input("Enter IP address: ")
 failed_attempts = int(input("Enter failed login attempts: "))
 status_input = input("Enter account status (Active/Inactive): ")
 
-# 2. Convert account status to Boolean and verify data types with type()
+
 is_active = status_input.strip().lower() == "active"
 
-# Include a float calculation so floats and float() are demonstrated cleanly
 risk_score = float(failed_attempts) * 15.5
 
-# Display verified input types (demonstrates type() and str())
+
 print("\n--- DATA TYPE VERIFICATION ---")
 print("Username type: " + str(type(username)))
 print("Email type: " + str(type(email)))
@@ -30,7 +28,7 @@ print("Failed Attempts type: " + str(type(failed_attempts)))
 print("Account Status (Boolean) type: " + str(type(is_active)))
 print("Risk Score (Float) type: " + str(type(risk_score)))
 
-# 3. Password assessment (using basic string checks & if/else)
+
 is_weak_password = (
     len(password) < 8
     or password.lower() == "password"
@@ -52,7 +50,7 @@ if is_active:
 else:
     account_status_display = "INACTIVE"
 
-# 5. Threat detection & final status using if and else
+
 if not is_active:
     threat_detection = "[WARNING] Account is currently INACTIVE.\n[INFO] Login access should remain restricted."
     threat_level = "ACCOUNT INACTIVE"
@@ -72,7 +70,7 @@ else:
             threat_level = "LOW"
             recommendation = "No immediate action required. Continue standard monitoring."
 
-# 6. Generate formatted CyberGuard Security Report
+
 print("\n========================================")
 print("          CYBERGUARD SECURITY REPORT")
 print("========================================")
